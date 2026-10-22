@@ -1,0 +1,38 @@
+[
+  {
+    "query": "Baue im Sammlungsbereich eine Ansicht 'Zuletzt angesehen', die die letzten Materialien als Kacheln zeigt.",
+    "expected_behavior": [
+      "lädt den Skill edu-sharing-ux-build-components",
+      "verwendet es-node-entries-wrapper mit displayType Grid oder SmallGrid statt einer eigenen Kachel-Komponente",
+      "legt ein <ng-template #empty> mit übersetztem Leerzustand an",
+      "behandelt Fehler beim Laden mit toast.error(err)",
+      "verwendet keine Farbliterale; lint-design-rules.mjs meldet 0 FEHLER",
+      "Abstände nur aus der spacing-Skala (5/10/15/20/25/30/40px); keine off-scale-spacing-Warnung ohne Begründung",
+      "legt i18n-Schlüssel in collections/de.json und en.json an (Sie-Form im Deutschen)",
+      "ergänzt eine Storybook-Story oder begründet, warum nicht"
+    ]
+  },
+  {
+    "query": "Die Info-Leiste über der Suche soll im Dark Mode nicht mehr hellblau leuchten. Bitte fixen.",
+    "expected_behavior": [
+      "findet die Ursache: --palette-primary-X, ein Farbliteral oder var(--primary) als Fläche, das im Dark Mode hell leuchtet (#96cdf8) – jeweils gleichwertig",
+      "ersetzt sie durch --primaryBackground50/100 bzw. --primaryForeground800/900 oder einen neuen Token in :root UND body.isDarkTheme",
+      "setzt kein mat.theme() und keine --mat-sys-* Variablen",
+      "prüft in Storybook oder per ?theme=dark / ?theme=light Light- und Dark-Theme",
+      "nennt den Kontrast des Textes auf der neuen Fläche (>= 4,5:1)"
+    ]
+  },
+  {
+    "query": "Füge in der Materialansicht einen Button 'Zur Merkliste hinzufügen' mit Herz-Icon hinzu, der nach dem Klick eine Bestätigung zeigt.",
+    "expected_behavior": [
+      "nutzt <i esIcon=\"favorite_border\"> bzw. esIcon statt <mat-icon>",
+      "gibt einem Icon-only-Button ein aria-label über die translate-Pipe; bei Button mit Text ist das Icon dekorativ",
+      "verwendet mat-button/mat-flat-button mit color=\"primary\" statt eigener Button-Optik",
+      "integriert die Aktion bevorzugt als OptionItem in die vorhandene es-actionbar",
+      "zeigt die Bestätigung über toast.show({ type: 'info', subtype: ToastType.InfoSimple }) statt MatSnackBar",
+      "zeigt einen Ladezustand (es-spinner-small oder disabled) während des Requests",
+      "verwendet ngx-edu-sharing-api statt @Deprecated RestXxxService",
+      "verkleinert den Button nicht unter die Material-Ist-Größe und nutzt --accent nicht als Icon-Farbe"
+    ]
+  }
+]

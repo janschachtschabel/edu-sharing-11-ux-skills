@@ -1,0 +1,33 @@
+[
+  {
+    "query": "Prüfe die Komponente src/app/features/dashboard-swimlane auf Barrierefreiheit, bevor ich den MR aufmache.",
+    "expected_behavior": [
+      "lädt den Skill edu-sharing-ux-audit-accessibility",
+      "führt lint-design-rules.mjs auf den Dateien der Komponente aus",
+      "liefert eine Tabelle mit Schwere, Datei:Zeile, WCAG-Nummer, Befund, Fix",
+      "bewertet Kontraste für Light UND Dark Mode",
+      "rechnet neue Farbkombinationen zusätzlich mit WLO-Branding (primary #003b7c, accent #e4f700)",
+      "schlägt Fixes nur mit Tokens/Mixins/esIcon vor, keine Hex-Werte",
+      "listet am Ende, was nur im Browser prüfbar ist"
+    ]
+  },
+  {
+    "query": "Ist grauer Hinweistext in var(--textMediumLight) auf der Seitenfläche barrierefrei?",
+    "expected_behavior": [
+      "nennt 4,09:1 auf --backgroundColor (#f3f3f3) als Verstoß gegen 1.4.3",
+      "nennt 4,54:1 auf weißer Fläche als gerade ausreichend",
+      "empfiehlt --textLight (6,41:1) als Fix",
+      "prüft oder erwähnt den Dark-Mode-Wert"
+    ]
+  },
+  {
+    "query": "Unser neuer Löschen-Button in der Tabellenzeile ist nur ein Mülleimer-Icon. Passt das so? <button mat-icon-button (click)=\"delete(node)\"><i esIcon=\"delete\"></i></button>",
+    "expected_behavior": [
+      "meldet fehlenden zugänglichen Namen als Kritisch (1.1.1/4.1.2)",
+      "schlägt [attr.aria-label]=\"'OPTIONS.DELETE' | translate\" o. ä. am Button vor",
+      "setzt kein [aria]=\"true\" zusätzlich zum Button-Label (keine doppelte Ansage)",
+      "bestätigt, dass mat-icon-button (Ist 40px, >= 24px) die Zielgröße erfüllt und globalen Tastaturfokus mitbringt",
+      "empfiehlt Löschbestätigung über DialogsService (DELETE_OR_CANCEL)"
+    ]
+  }
+]

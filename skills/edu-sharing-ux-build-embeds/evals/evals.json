@@ -1,0 +1,34 @@
+[
+  {
+    "query": "Wir wollen die Themenseite 'Mathematik' auf der WordPress-Seite eines Bundeslandes einbinden. Was muss ich tun und worauf muss der Betreiber achten?",
+    "expected_behavior": [
+      "lädt den Skill edu-sharing-ux-build-embeds",
+      "nennt das Element edu-sharing-topic-page mit collection-id (dash-case) und das Setzen von window.__env.EDU_SHARING_API_URL vor den Skripten",
+      "weist darauf hin, dass es kein Shadow DOM gibt und globale Styles (html/body, :root) die Gastseite beeinflussen",
+      "verlangt eine von der Gastseite vorgegebene Höhe",
+      "nennt helles Theme als Standard und ?theme= für Dark Mode",
+      "nennt, dass Dialoge die Gastseite inert setzen und Overlays am body der Gastseite hängen"
+    ]
+  },
+  {
+    "query": "Baue ein neues kleines Such-Widget, das andere Portale als Web Component einbinden können.",
+    "expected_behavior": [
+      "prüft zuerst edu-sharing-generic-widget bzw. vorhandene Elemente",
+      "registriert ein neues Element über EDU_SHARING_WEB_COMPONENTS statt eigenem Bootstrapping",
+      "fügt keine globalen Styles auf html/body/:root hinzu",
+      "nutzt var(--mainnavCurrentHeight) bzw. keine Annahme über die Hauptnavigation",
+      "öffnet tiefe Links erkennbar in neuem Tab und Fenster nur aus Nutzeraktionen",
+      "dokumentiert Inputs (dash-case) und Outputs für den Gastseiten-Betreiber"
+    ]
+  },
+  {
+    "query": "Im Moodle-Kurs zeigt die eingebettete Rendering-Komponente bei manchen Materialien nur eine leere Fläche. Was kann das sein und wie machen wir es nutzerfreundlicher?",
+    "expected_behavior": [
+      "erklärt, dass Toasts in der Rendering-Komponente keine Wirkung haben und Fehler deshalb unsichtbar sind",
+      "nennt withCredentials:false (nur öffentliche Daten) als mögliche Ursache",
+      "verlangt sichtbare Leer- und Fehlerzustände in der Fläche selbst",
+      "nennt component_height/footer_height für die Höhe",
+      "fordert title an iframes"
+    ]
+  }
+]

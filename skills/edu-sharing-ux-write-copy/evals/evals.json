@@ -1,0 +1,31 @@
+[
+  {
+    "query": "Schreib die Fehlermeldungen für das Upload-Formular: Datei zu groß, falscher Dateityp, Upload abgebrochen.",
+    "expected_behavior": [
+      "lädt den Skill edu-sharing-ux-write-copy",
+      "liefert je Fall einen i18n-Schlüssel unter dem Feature-Präfix (z. B. WORKSPACE.UPLOAD.ERROR_...) mit de- und en-Text",
+      "deutsche Texte in Sie-Form, nennen Ursache und nächsten Schritt, ohne Ausrufezeichen und ohne Fehlercodes",
+      "liefert zusätzlich die Du-Form für de-informal.json",
+      "nutzt Platzhalter wie {{maxSize}} statt fester Zahlen"
+    ]
+  },
+  {
+    "query": "Wir brauchen einen Leerzustand für 'Meine Sammlungen', wenn die Person noch keine angelegt hat.",
+    "expected_behavior": [
+      "übernimmt den Satzbau vorhandener Leertexte im selben Objekt (COLLECTIONS.EMPTY.*) bzw. 'Keine Sammlungen'; ein zweiter Satz nennt die Button-Beschriftung wörtlich",
+      "verwendet den Begriff Sammlung (nicht Collection) und Element/Material korrekt",
+      "schlägt vor, den Text im <ng-template #empty> von es-node-entries-wrapper zu nutzen",
+      "legt Schlüssel in collections/de.json und en.json an"
+    ]
+  },
+  {
+    "query": "Button-Text und Bestätigungsdialog für 'Material aus der Sammlung nehmen' bitte.",
+    "expected_behavior": [
+      "verwendet 'Entfernen' statt 'Löschen', weil das Original erhalten bleibt",
+      "Button-Text als Verb im Infinitiv (z. B. 'Aus Sammlung entfernen')",
+      "Dialognachricht nennt die Folge (Original bleibt erhalten)",
+      "nutzt einen DialogButton-Satz bzw. einen eigenen Primärbutton mit Verb statt 'OK'",
+      "gendert Personenbezeichnungen, falls vorhanden, mit {{GENDER_SEPARATOR}}"
+    ]
+  }
+]

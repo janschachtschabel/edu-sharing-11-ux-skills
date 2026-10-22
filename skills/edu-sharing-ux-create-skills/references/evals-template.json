@@ -1,0 +1,13 @@
+[
+  {
+    "query": "Baue die Materialkachel für die Suchergebnisse.",
+    "expected_behavior": [
+      "lädt den Skill [skill-name]",
+      "nutzt die vorhandene Kachel-Komponente statt eines Neubaus",
+      "verwendet nur Tokens aus DESIGN.md",
+      "setzt Lade-, Leer- und Fehlerzustand um"
+    ]
+  },
+  { "query": "[Testaufgabe 2]", "expected_behavior": ["[…]"] },
+  { "query": "[Testaufgabe 3]", "expected_behavior": ["[…]"] }
+]

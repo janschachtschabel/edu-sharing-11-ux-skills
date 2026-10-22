@@ -1,0 +1,135 @@
+# Changelog
+
+## 0.6.0 · Vorschläge aus Mockup-Test 2, Palette gemessen
+- **Palette**: Algorithmus von `angular-material-css-vars` an WLO-Staging nachgemessen. `tokens.md` §1 enthält die Hex-Werte aller Stufen für Default `#48708e` und WLO `#003b7c`.
+- **Neuer Befund**: Der Fokusrahmen der Default-Installation hat auf Weiß nur 2,91:1, also weniger als 3:1 (OFFENE-PUNKTE B15). Im A11y-Skill eingetragen.
+- **tokens.md**: Werte für Navigation, Suchfeld und Lasche; Kontrast des Platzhalters; `--textBlack` als Textfarbe im Bestand erklärt; `$cardHeight` als Altwert; Ist-Werte bestehender Bausteine gegenüber der Skala für neuen Code; WLO-Kachelradius 12px und `--mainnavHeight` 100px gemessen.
+- **mixins.md**: Zahlenwerte aller Schatten-Mixins.
+- **page-layouts.md**: Name des Bereichs „Suchumgebung“; Überschriften; Reihenfolge der Kopfzeile laut Screenshot; Optionen der Auswahl-Leiste; alle Kurzlabels der Mobilleiste; Verweis auf ein lokales Referenzbild.
+- **node-entries-anatomy.md**: Kopfleiste bleibt bei Auswahl; SmallGrid-Sammlung laut Screenshot; Scroll-Pfeile; Typ-Icon als dokumentierte Ausnahme (`--palette-primary-600`).
+- **material-variants.md**: Checkbox 18px mit Radius 2px, Tab-Indikator 2px.
+- **component-specs.md**: Begründung beim Sortier-Label korrigiert.
+- **A11y-Skill**: Zielgröße nach WCAG 2.2 (2.5.8) ausdrücklich; Tabelle mit Fokus- und Platzhalter-Werten.
+- **Lint**: `off-scale-spacing` prüft jede Deklaration einer Zeile.
+
+## 0.5.0 · Themenseiten, Einbettung, Formulare und weitere Seiten
+- **Neuer Skill `edu-sharing-ux-build-topic-pages`** (0.1.0):
+  - Referenz `topic-page-architecture.md`: Datenmodell, Varianten und Vorlagen inkl. `repeat`, Profiling, Seitenlayout (Raster mit 6 Spalten, 1440px, Radius 24px), Abschnittstypen und -layouts, Hintergrundformen, Editor mit sofortigem Speichern, Rollen-Tokens und `$brand-font-family: 'Montserrat'`, Dark Mode über `toDarkSurfaceColor`, Fallstricke
+  - Referenz `widgets.md`: alle Widgets mit Konfiguration, Optik und Zuständen; Anleitung und Gerüst für neue Widgets
+  - 3 Testaufgaben
+- **Neuer Skill `edu-sharing-ux-build-embeds`** (0.1.0):
+  - Referenz `embedding.md`: Einbettungsarten, 6 Custom Elements mit Inputs und Outputs, iframe-Seiten `/components/embed/*` mit Events, was sich eingebettet ändert (kein Shadow DOM, globale Styles, helles Theme, Overlays, Gastseite `inert`), Rendering-Komponente, LMS/LTI, Lücken
+  - 3 Testaufgaben
+- **build-components 0.5.0:**
+  - neue Referenz `forms.md`: Feldregeln, Pflicht, Hinweis und Fehler, zwei Muster fürs Absenden, Dialogformulare mit Laden und automatischem Speichern, MDS-Modi und Widget-Typen, Chips und Baum, Mehrfachbearbeitung, KI, Eingabe-Bausteine, a11y
+  - `page-layouts.md` §7–13: Detailansicht (render2/legacy), Vorschau-Seitenleiste, Startseite mit Schnellzugriffen und Swimlanes, Redaktionsseite, Hochladen und Erstellen, Login, Profil, Fehler- und Ladeseite, gemeinsame Muster
+  - Ablauf verweist auf die neuen Skills
+- **audit-accessibility:** Prüfpunkte für Formulare, Themenseiten und Einbettung
+- **review, write-handoff, write-copy:** Verweise auf die neuen Skills, `forms.md` und den i18n-Ordner `topic-page`
+- **DESIGN.md 0.4.0:**
+  - Skill-Tabelle mit 8 Skills
+  - Ausnahme für `$brand-font-family` auf Themenseiten
+  - auf 8,1 KB gekürzt (ein Do/Don't-Paar entfällt, das Kernregel 12 abdeckt)
+- **AGENTS-Block** um die zwei neuen Skills ergänzt
+- **Meta-Skill 1.4.0:** Bei der Ableitung aus Code auch alle Seiten-Ordner, eigene Seitensysteme, Builds für Web Components und Embeds sowie Formular-Systeme auswerten
+- **TODO-INFORMATIONSBEDARF:** I5 teilweise geklärt (Montserrat), neu I17 (MDS-Gruppen der Darstellung), I18 (Rendering Service 2), I19 (Event-Schnittstelle). OFFENE-PUNKTE: B14
+
+## 0.4.0 · Aufbau aus dem Repo nachgetragen (nach dem Mockup-Test)
+- **Neue Referenzen im Build-Skill:**
+  - `node-entries-anatomy.md`: Grid-Kachel von oben nach unten, Zustände, Sammlungs-Kachel, SmallGrid, Raster, Tabelle, Metadaten-Zeilen aus dem MDS, Lizenz als CC-Symbol, relative Datumsangaben, Badges, Vorschaubild
+  - `page-layouts.md`: Hauptnavigation, Suchfeld, Hauptmenü, untere Mobilleiste, Suchseite, Sammlungsseite, Arbeitsbereich, Konfigurationsschlüssel mit Defaults
+  - `component-specs.md`: Schrift (nur ein Schnitt), Icon-Größen, Buttons und Actionbar-Varianten, Sortierung und Ansicht, Suchfeld und aktive Filter, CardDialog, Info-Message, Toast, Spinner, Avatar, Badge-Muster, Tabs, Brotkrumen, Edge-Toggle, Sammlungsfarben
+- **Korrekturen:**
+  - Kacheln haben keinen Radius.
+  - Fokus der Kachel `setGlobalKeyboardFocus()`, der Tabelle Modus `'border'` (Widerspruch W1 behoben).
+  - `--cardWidth` ist eine Mindestbreite.
+  - Lizenz-Badges nur im Lizenzdialog.
+  - Ansicht umschalten über einen einzelnen Icon-Button.
+  - `es-small-collection` ist ein Banner.
+  - Checkbox: Häkchen `--defaultBackground`.
+  - Dark-Formeln einheitlich als `color-mix(...)`.
+  - `--licenseBadgeTextColor` mit eigener Zeile.
+  - `--searchInputBorderColor` mit Kontrast-Hinweis.
+- **DESIGN.md 0.3.0:** Radiusregel präzisiert, Hinweis zur Schrift, Kurzliste um Sortierung, Ansicht, Typ und Lizenz ergänzt (8,1 KB)
+- **Lint:**
+  - kein Fehlalarm mehr bei `box-shadow: var()`/`none`
+  - 2px nicht mehr als Abstand erlaubt
+  - `<style>` in HTML und `styles:` in TS werden mitgeprüft
+- **`contrast.mjs`:** löst `var()`/`color-mix()` auf; neue Option `--set name=#hex` für Branding und Palettenwerte
+- **write-copy:** Such-Schlüssel ergänzt. review und write-handoff verweisen auf den Ist-Aufbau.
+- **Meta-Skill 1.3.0:** Aufbau der Kernkomponenten aus Templates ableiten, Mockup-Test als Prüfschritt
+- **Neu:** `TODO-INFORMATIONSBEDARF.md` (I1–I16). OFFENE-PUNKTE mit B13 (Kleinfehler) und C10
+
+## 0.3.0 · Vorschläge aus dem Testlauf übernommen (`arbeitsnotiz/02-testergebnisse.md`)
+- **build-components:**
+  - Ablauf 0: Handoff lesen; offene Fragen zuerst stellen, sonst die Annahme kapseln
+  - Ort `pages/` bzw. `features/` nach Nachbarcode
+  - Lade- und Rückmeldeverhalten wiederverwendeter Optionen nennen
+  - `?theme=dark/light` ohne Storybook
+  - Lint „0 FEHLER“ nur auf neuen oder geänderten Zeilen; Altlasten melden, nicht mitändern
+  - `openDeleteNodesDialog` für Knoten; keine app-weiten Änderungen an vorhandenen Aktionen ohne Rückfrage
+  - Checkliste wird in der Antwort wiedergegeben
+- **Lint:** neue Regel `icon-button-without-label` (FEHLER; erkennt Labels am Button und über `esIcon [aria]="true"`)
+- **audit-accessibility:**
+  - `es-node-url` mit `[aria-label]="false"` bei Zusatzinhalt
+  - Fokus für `<a mat-button>` prüfen
+  - `openDeleteNodesDialog` als Fix-Mittel
+- **review:**
+  - „kein Muster – siehe Offene Frage“ statt erfundener Empfehlung
+  - „Was gut funktioniert“ nur, wenn bis zum Verbraucher nachverfolgt
+  - Tastatur-Blocker bleiben in voller Schwere
+  - nicht prüfbare Zustände als offene Frage
+  - `showAsAction` wirkt nicht in Tabellen
+  - Gefahrenbutton rechts nur in Bestätigungsdialogen
+- **write-copy:**
+  - Platzhalter-Check
+  - Leerzustand übernimmt den Nachbarstil und die Button-Beschriftung wörtlich
+  - Entfernen ≠ „Ja, löschen“ (Vorschlag, wartet auf Team 5)
+  - Fallback der Übersetzungen belegt
+- **write-handoff:**
+  - Aktionen als `OptionItem`
+  - Services, Inputs und Scopes per grep prüfen
+  - Fehler-Toast unter `TOAST.`
+  - Abnahme-Checkliste vollständig übernehmen
+- **AGENTS-Block:** `evals/` nicht ins Repo kopieren; offene Fragen im Handoff zuerst klären; Lint-Regel für geänderte Zeilen
+- **Beispiel-Handoff korrigiert:** Scope als Annahme; keine Umschaltung bei SmallGrid; Datenquelle `recentActivity`; Abnahme mit A11y und Storybook
+- **evals:** B2 (Ursache `var(--primary)`), R1 (Pfad `node-store-dialog`), R2/R3, C2 angepasst
+- **OFFENE-PUNKTE:** A10 geklärt; neu sind A11, A12, B10–B12 und C7–C9
+
+## 0.2.0 · Namen, Abstands-Skala, Ist-Stand
+- Skills einheitlich umbenannt auf `edu-sharing-ux-<verb>-<gegenstand>`:
+  - `building-edu-sharing-components` → `edu-sharing-ux-build-components`
+  - `auditing-edu-sharing-accessibility` → `edu-sharing-ux-audit-accessibility`
+  - `reviewing-edu-sharing-ux` → `edu-sharing-ux-review`
+  - `writing-edu-sharing-ux-copy` → `edu-sharing-ux-write-copy`
+  - `writing-edu-sharing-handoffs` → `edu-sharing-ux-write-handoff`
+  - `creating-wlo-design-skills` → `edu-sharing-ux-create-skills`
+- DESIGN.md 0.2.0:
+  - Ist-Stand als Maßstab
+  - `spacing`-Skala 5–40 px
+  - Klickziel ≥ 24 px nach Messung
+  - Regel zur WLO-Akzentfarbe
+  - Tabelle aller Skills mit Auslösern
+- Lint: neue Warnung `off-scale-spacing`
+- A11y-Skill, Material-Varianten: Zielgrößen nach Messung auf WLO-Staging (40/36/32 px statt angenommener 48 px)
+- Neu: `OFFENE-PUNKTE.md` (offene Fragen, Widersprüche im Code, TODOs)
+- Findings aus Runde 2 in die Skills übernommen (Skills 0.2.0, Meta-Skill 1.2.0):
+  - build-components: Pflichtregeln zu Abständen und Klickflächen; Verbot von Accent als Text- oder Icon-Farbe; Checkliste mit WLO-Farben; `tokens.md` mit den Abschnitten 7 (spacing-Skala) und 10 (Branding-Beispiel WLO); `examples.md` mit Do/Don't zu Abständen und Accent; Größen in `material-variants.md`
+  - audit-accessibility: WLO-Kontraste in der Werte-Tabelle, Fokus im Dark Mode als Grenzwert, `checklist.md` Abschnitt 7 zum Messen an der laufenden Instanz (Config-API, Klickflächen per JS)
+  - review: Zustände-Matrix um Branding und Zielgrößen erweitert, Prüffrage zu Abständen
+  - write-handoff: WLO-Hexwerte den Tokens zugeordnet, Figma-4/8-Werte auf die Skala runden, Zielgrößen als Abweichung markieren
+  - create-skills: in `code-extraction.md` Laufende Instanz messen und Skalen aus Häufigkeiten ableiten
+  - evals ergänzt (Abstände, Accent, WLO-Kontraste)
+
+## 0.1.0 · Erster Entwurf (Testlauf des Verfahrens)
+- Bestandsaufnahme aus dem Code von `edu-sharing-community-repository` (`maven/fixes/11.0`, `Frontend/`): `arbeitsnotiz/01-bestandsaufnahme.md`
+- `DESIGN.md` (6,7 KB) mit Token-Block und 17 Kernregeln
+- Skills:
+  - `edu-sharing-ux-build-components` mit 6 Referenzen und dem Prüfskript `lint-design-rules.mjs`
+  - `edu-sharing-ux-audit-accessibility` mit dem Skript `contrast.mjs`
+  - `edu-sharing-ux-review`
+  - `edu-sharing-ux-write-copy`
+  - `edu-sharing-ux-write-handoff`
+  - Meta-Skill `edu-sharing-ux-create-skills` (1.1.0, ergänzt um die Ableitung aus Code)
+- Vorlagen: `handoff-template.md`, `AGENTS-design-section.md`, Beispiel-Handoff
+- Status: **nicht freigegeben**. Offene Fragen an Team 5 und die Testläufe (Schritt 4) stehen noch aus.

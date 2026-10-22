@@ -1,0 +1,32 @@
+[
+  {
+    "query": "Baue für die Themenseiten ein neues Widget 'Termine', das eine Liste von Veranstaltungen (Titel, Datum, Link) anzeigt und im Bearbeiten-Modus zwischen Liste und Kacheln umschaltbar ist.",
+    "expected_behavior": [
+      "lädt den Skill edu-sharing-ux-build-topic-pages",
+      "trägt den Typ in WIDGETS ein und lädt die Komponente lazy über getComponentClass",
+      "definiert ein Config-Interface extends BaseWidgetConfig und setzt WidgetComponentInterface (editMode als InputSignal, initialized/updateInProgress)",
+      "speichert nur über configChanged / retrieveWidgetConfig, kein eigener Speichern-Button",
+      "nutzt es-widget-configuration-buttons mit LayoutOption[] inkl. ariaLabel für die Umschaltung",
+      "bildet Laden (es-spinner), leer (es-info-message info) ab; nutzt Container Query",
+      "legt Texte unter TOPIC_PAGE.WIDGET.<NAME>. in topic-page/de.json und en.json an"
+    ]
+  },
+  {
+    "query": "Auf unserer Themenseite soll ein Abschnitt mit farbigem Hintergrund und einer Pfeilform links erscheinen. Im Dark Mode leuchtet die Form aber grell – kannst du das beheben?",
+    "expected_behavior": [
+      "erkennt, dass die Hintergrundform die Rohfarbe bekommt (kein toDarkSurfaceColor)",
+      "leitet die Nutzerfarbe im Dark Mode durch ThemeService.toDarkSurfaceColor() und setzt Text über .bright-color/--textOnDarkSurface",
+      "fügt keine Hex-Werte ein",
+      "prüft Ansicht und Bearbeiten-Modus in Light und Dark"
+    ]
+  },
+  {
+    "query": "Wie lege ich eine neue Vorlage für Fach-Themenseiten an, die automatisch für jede Untersammlung einen Abschnitt erzeugt?",
+    "expected_behavior": [
+      "erklärt Vorlage (Template) als Variante unter page_config_propagate_ref mit page_variant_is_template",
+      "nennt die repeat-Regel der Swimlane (source, orderBy, maxItems, Platzhalter ${item.title})",
+      "nennt die Voraussetzung Admin bzw. ACCESS_ADD_CHILDREN am Ordner TOPIC_PAGE_TEMPLATES",
+      "verwendet in Texten für Nutzende 'Abschnitt' statt 'Swimlane'"
+    ]
+  }
+]

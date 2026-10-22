@@ -1,0 +1,31 @@
+[
+  {
+    "query": "Hier ist der Screenshot unseres Figma-Entwurfs für die neue Merkliste-Exportfunktion (Button 'Als Liste exportieren' oben rechts, Dialog mit Formatauswahl PDF/CSV). Mach daraus einen Handoff für Team 6.",
+    "expected_behavior": [
+      "lädt den Skill edu-sharing-ux-write-handoff und nutzt assets/handoff-template.md",
+      "ordnet Button der es-actionbar (OptionItem) und Dialog dem DialogsService/CardDialog zu",
+      "nutzt mat-radio-group bzw. mat-button-toggle-group für Formatauswahl statt Eigenbau",
+      "listet fehlende Zustände (Laden, Fehler, leer, mobil) als offene Fragen statt sie zu erfinden",
+      "gibt Texte als i18n-Schlüssel mit de (Sie-Form) und en an",
+      "nennt nur Token-Namen, keine Hex-Werte"
+    ]
+  },
+  {
+    "query": "Im Figma ist der Hinweis-Kasten #FFF4E5 mit Text #8A4B00. Welche Tokens soll Team 6 nehmen?",
+    "expected_behavior": [
+      "ordnet den Kasten es-info-message mode='warning' zu (color-mix mit --colorStatusWarning)",
+      "markiert exakte Figma-Hex-Werte ohne Token als [Abweichung] statt sie zu übernehmen",
+      "nennt Dark-Mode-Verhalten"
+    ]
+  },
+  {
+    "query": "Setze den Handoff handoffs/beispiel-zuletzt-angesehen.md um.",
+    "expected_behavior": [
+      "liest Handoff und DESIGN.md, lädt edu-sharing-ux-build-components",
+      "baut nach den genannten Bausteinen (es-node-entries-wrapper SmallGrid, #empty)",
+      "legt die angegebenen i18n-Schlüssel exakt an",
+      "stellt die offenen Fragen aus dem Handoff, bevor die Datenquelle festgelegt wird",
+      "hakt die Abnahme-Checkliste ab"
+    ]
+  }
+]

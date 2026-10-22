@@ -1,0 +1,31 @@
+[
+  {
+    "query": "Mach ein UX-Review der Merkliste (src/app/features/dialogs/dialog-modules/node-store-dialog, geöffnet aus der Suche).",
+    "expected_behavior": [
+      "lädt den Skill edu-sharing-ux-review",
+      "benennt Persona und Hauptaufgabe und spielt sie Schritt für Schritt durch",
+      "prüft Leer-, Lade-, Fehler-, Mobil- und Dark-Zustand",
+      "liefert Tabelle mit Schwere, Heuristik, Ort, Befund, Empfehlung",
+      "jede Empfehlung nennt ein vorhandenes edu-sharing-Muster (es-actionbar, Toast, DialogsService, #empty …)",
+      "ändert keinen Code"
+    ]
+  },
+  {
+    "query": "Ist dieser Dialog intuitiv? Er hat drei Buttons nebeneinander: 'Löschen' (rot, links), 'Speichern' (blau), 'Abbrechen' (blau, rechts).",
+    "expected_behavior": [
+      "bemängelt mehrere Primäraktionen und die Button-Reihenfolge: in Bestätigungsdialogen Standard links und Gefahr rechts; im Formulardialog eine destruktive Nebenaktion links (position: 'opposite')",
+      "empfiehlt Löschen räumlich zu trennen bzw. per eigener DELETE_OR_CANCEL-Bestätigung",
+      "empfiehlt DialogButton mit color standard/primary/danger statt eigener Farben",
+      "bewertet Datenverlust-Risiko als Blocker oder Hoch"
+    ]
+  },
+  {
+    "query": "Bewerte das Konzept: Neue Seite 'Meine Uploads' mit eigener Tabelle, eigenem Filter-Panel und eigenem Löschen-Button pro Zeile.",
+    "expected_behavior": [
+      "empfiehlt es-node-entries-wrapper mit displayType Table statt eigener Tabelle",
+      "empfiehlt Aktionen über es-actionbar/OptionItem statt Einzelbuttons pro Zeile",
+      "fragt nach oder prüft Mobil-Verhalten (Filter als mobileModalOverlay oder wie das Filter-Muster der Suchseite, filters-dialog-content; Bottom Sheet)",
+      "verweist für A11y-Details an edu-sharing-ux-audit-accessibility"
+    ]
+  }
+]
